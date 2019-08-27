@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'model.dart';
 import 'style.dart';
+import 'details.dart';
+import 'package:page_transition/page_transition.dart';
 
 void main() => runApp(MyApp());
 
@@ -115,7 +117,18 @@ class MyHomePage extends StatelessWidget {
                       padding: EdgeInsets.only(right: 22.0),
                       child: IconButton(
                         icon: Icon(Icons.arrow_forward_ios),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            PageTransition(
+                              type: PageTransitionType.rotate,
+                              duration: Duration(
+                                seconds: 1,
+                              ),
+                              child: ProductDetail(),
+                            ),
+                          );
+                        },
                       ),
                     ),
                   ),
