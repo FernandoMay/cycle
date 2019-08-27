@@ -102,30 +102,32 @@ class MyHomePage extends StatelessWidget {
                     style: AppStyle.headingStyle2,
                   ),
                   SizedBox(
-                    height: 20.0,
+                    height: 30.0,
                   ),
                   Text(
                     producto.descPost,
                     style: AppStyle.descStyle,
                   ),
                   SizedBox(
-                    height: 16.0,
+                    height: 26.0,
                   ),
                   Align(
                     alignment: Alignment.bottomRight,
                     child: Padding(
-                      padding: EdgeInsets.only(right: 22.0),
+                      padding: EdgeInsets.only(
+                        right: 27.0,
+                        bottom: 27.0,
+                      ),
                       child: IconButton(
                         icon: Icon(Icons.arrow_forward_ios),
                         onPressed: () {
                           Navigator.push(
                             context,
                             PageTransition(
-                              type: PageTransitionType.rotate,
-                              duration: Duration(
-                                seconds: 1,
+                              type: PageTransitionType.rightToLeft,
+                              child: ProductDetail(
+                                product: producto,
                               ),
-                              child: ProductDetail(),
                             ),
                           );
                         },
